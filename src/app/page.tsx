@@ -1,9 +1,8 @@
 import LandingPage from '@/assets/landing-page.png';
-import LayoutMain from "@/components/layout";
 
 const Home = () => {
   return (
-    <LayoutMain>
+    <>
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="text-center md:text-left">
@@ -30,7 +29,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </LayoutMain>
+    </>
   );
 };
 
