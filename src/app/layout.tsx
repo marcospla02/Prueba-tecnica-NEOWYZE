@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import LayoutMain from "@/components/layout";
 
 export const metadata: Metadata = {
   title: "Challenge-NEOWYZE",
@@ -14,7 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <main>{children}</main>
+        <LayoutMain>
+          <main>{children}</main>
+        </LayoutMain>
       </body>
     </html>
   );
