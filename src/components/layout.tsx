@@ -17,7 +17,7 @@ const LayoutMain = ({ children }: { children: React.ReactNode }) => {
       <header className="bg-headerBg text-text py-2">
         <div className="container mx-auto flex justify-between items-center px-2">
           <Link href="/">
-            <img src={Logo.src} alt="Logo" className="size-16" />
+            <img src={Logo.src} alt="Logo" className="lg:size-16 md:size-12 sm:size-8 max-w-16 size-8" />
           </Link>
           <nav>
             <ul className="flex space-x-4">
