@@ -18,8 +18,8 @@ const Movies = () => {
   }, []);
 
   return (
-      <div className="flex flex-wrap justify-start">
-        {films.map((film, index) => (
+    <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-10 lg:gap-10 mx-auto max-w-screen-lg justify-center">
+    {films.map((film, index) => (
           <div key={index} className="m-4">
             <FilmCard films={film} />
           </div>
