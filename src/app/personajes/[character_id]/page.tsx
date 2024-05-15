@@ -6,16 +6,19 @@ import CharacterDetailCard from "@/components/CharacterCard/CharacterDetailCard"
 import { Character } from "@/utils/Interfaces";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import Loading from "../loading";
 
 const ChracterDetail = ({ params }: { params: { character_id: string } }) => {
   const [character, setCharacter] = useState<Character>();
   const router = useRouter();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchCharacter = async () => {
       const charactersData: Character = await GET(params.character_id);
 
       setCharacter(charactersData);
+      setLoading(false)
     };
 
     fetchCharacter();
@@ -23,8 +26,14 @@ const ChracterDetail = ({ params }: { params: { character_id: string } }) => {
 
   return (
     <>
-      <BackButton handleGoBack={() => router.back()} />
-      <CharacterDetailCard character={character} />
+      {!loading ? (
+        <>
+          <BackButton handleGoBack={() => router.back()} />
+          <CharacterDetailCard character={character} />
+        </>
+      ) : (
+        <Loading />
+      )}
     </>
   );
 };
