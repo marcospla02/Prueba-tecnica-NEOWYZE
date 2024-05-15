@@ -6,7 +6,7 @@ const Paginated = ({
   handleNextPage,
 }: any) => {
   return (
-    <div className="flex justify-center mt-8 mb-8">
+    <div className="flex justify-center sm:justify-end mb-8">
       <button
         className={` hover:bg-text hover:text-white text-black font-bold py-2 px-4 rounded focus:outline-none transition duration-300 ease-in-out ${
           !prevPage && "opacity-50 cursor-not-allowed"
